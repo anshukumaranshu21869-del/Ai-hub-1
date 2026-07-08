@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AIVerse India — AI Super App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">AI</div>
+        <div>
+          <h1>AIVerse India</h1>
+          <p>Discover • Learn • Earn</p>
+        </div>
+      </div>
+      <nav class="nav" id="sideNav"></nav>
+      <div class="premium-card">
+        <span>🚀 Startup Mode</span>
+        <h3>India ka AI Super App</h3>
+        <p>AI tools, jobs, prompts, learning, news aur earning ideas ek jagah.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menuBtn">☰</button>
+        <div class="search-wrap">
+          <span>⌕</span>
+          <input id="globalSearch" placeholder="Search AI tools, jobs, prompts, news..." />
+        </div>
+        <button class="pill-btn" id="langToggle">हिंदी / EN</button>
+        <button class="icon-btn" id="themeToggle">🌙</button>
+      </header>
+
+      <section class="hero panel">
+        <div class="hero-content">
+          <div class="badge">🇮🇳 Built for Indian students, creators & startups</div>
+          <h2>India ka best AI discovery, learning aur career platform.</h2>
+          <p>Har AI tool ka kaam, use case, prompt, alternatives, update, job opportunity aur earning idea — simple Hindi + English me.</p>
+          <div class="hero-actions">
+            <button class="primary-btn" data-jump="tools">Explore Tools</button>
+            <button class="secondary-btn" data-jump="career">AI Career Roadmap</button>
+          </div>
+        </div>
+        <div class="hero-grid">
+          <div><strong id="toolCount">150+</strong><span>AI Tools</span></div>
+          <div><strong>50+</strong><span>Prompts</span></div>
+          <div><strong>25+</strong><span>AI Jobs</span></div>
+          <div><strong>Daily</strong><span>Updates</span></div>
+        </div>
+      </section>
+
+      <section class="stats-grid">
+        <div class="stat-card"><span>🔥</span><h3>Trending AI</h3><p>Top tools aur launches</p></div>
+        <div class="stat-card"><span>💼</span><h3>Earn with AI</h3><p>Freelancing & job ideas</p></div>
+        <div class="stat-card"><span>🎓</span><h3>Learn AI</h3><p>Beginner roadmap</p></div>
+        <div class="stat-card"><span>🧠</span><h3>Prompt Hub</h3><p>Ready-to-use prompts</p></div>
+      </section>
+
+      <section id="tools" class="section panel">
+        <div class="section-head">
+          <div><span class="eyebrow">AI Directory</span><h2>AI Tools Library</h2></div>
+          <div class="filters" id="toolFilters"></div>
+        </div>
+        <div class="cards-grid" id="toolsGrid"></div>
+      </section>
+
+      <section id="news" class="section panel">
+        <div class="section-head"><div><span class="eyebrow">Fast Updates</span><h2>AI News & Launch Tracker</h2></div></div>
+        <div class="news-list" id="newsList"></div>
+      </section>
+
+      <section id="career" class="section panel">
+        <div class="section-head"><div><span class="eyebrow">Career</span><h2>AI Jobs & Earning Ideas</h2></div></div>
+        <div class="cards-grid" id="careerGrid"></div>
+      </section>
+
+      <section id="learn" class="section panel">
+        <div class="section-head"><div><span class="eyebrow">Roadmap</span><h2>Learn AI Step-by-Step</h2></div></div>
+        <div class="timeline" id="roadmap"></div>
+      </section>
+
+      <section id="prompts" class="section panel">
+        <div class="section-head"><div><span class="eyebrow">Prompt Library</span><h2>Copy-Paste Prompts</h2></div></div>
+        <div class="prompt-grid" id="promptGrid"></div>
+      </section>
+
+      <section id="startup" class="section panel startup-panel">
+        <div>
+          <span class="eyebrow">Founder Dashboard</span>
+          <h2>Premium Features Roadmap</h2>
+          <p>Next version me admin dashboard, login, bookmark sync, API based live news, notification, creator profile, affiliate links, sponsored listings aur Play Store APK.</p>
+        </div>
+        <div class="feature-list">
+          <span>✅ Hindi + English UI</span>
+          <span>✅ Mobile-first design</span>
+          <span>✅ Search + filters</span>
+          <span>✅ Tool detail cards</span>
+          <span>✅ Career + earning</span>
+          <span>✅ Prompt library</span>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="drawer" id="detailDrawer">
+    <div class="drawer-content">
+      <button class="close-btn" id="closeDrawer">×</button>
+      <div id="drawerBody"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
