@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Tools Directory - AIVerse India</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<main class="main">
+  <a href="index.html" style="color:inherit;text-decoration:none;font-weight:800;font-size:18px;">
+    ← Back to Home
+  </a>
+
+  <section class="hero" style="margin-top:25px;">
+    <div class="hero-text">
+      <span class="badge">🤖 AI Directory</span>
+      <h1>Har kaam ke liye best AI tool.</h1>
+      <p>
+        Student, creator, coder, businessman aur village user ke liye best AI tools —
+        simple Hindi + English guide ke saath.
+      </p>
+
+      <div class="hero-buttons">
+        <button onclick="alert('Search system next update me active hoga')">Search AI Tool</button>
+        <button class="secondary" onclick="alert('Submit AI Tool feature coming soon')">Submit Tool</button>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div><h2>1000+</h2><p>Future tools</p></div>
+      <div><h2>Hindi</h2><p>Simple guide</p></div>
+      <div><h2>Free</h2><p>Tools filter</p></div>
+      <div><h2>India</h2><p>User focused</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🔍 Search AI Tools</h2>
+    <input 
+      id="toolSearch"
+      type="text"
+      placeholder="Search: photo, video, study, coding, business..."
+      style="width:100%;padding:18px 22px;border-radius:999px;border:1px solid #e5e5ea;font-size:17px;outline:none;"
+      onkeyup="searchTools()"
+    />
+  </section>
+
+  <section class="section">
+    <h2>📂 Popular Categories</h2>
+    <div class="grid">
+      <div class="card">💬 Chat AI<br><span>ChatGPT, Claude, Gemini</span></div>
+      <div class="card">🎨 Image AI<br><span>Photo, logo, poster</span></div>
+      <div class="card">🎬 Video AI<br><span>Reels, editing, animation</span></div>
+      <div class="card">💻 Coding AI<br><span>Website, app, bug fix</span></div>
+      <div class="card">📚 Study AI<br><span>Notes, PYQ, doubts</span></div>
+      <div class="card">💼 Business AI<br><span>Marketing, ads, automation</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>⭐ Featured AI Tools</h2>
+
+    <div class="grid" id="toolsList">
+      <div class="card tool-item">
+        <b>ChatGPT</b><br>
+        <span>Study, coding, writing, ideas</span><br><br>
+        <span>Free + Paid • ⭐ 4.9</span>
+      </div>
+
+      <div class="card tool-item">
+        <b>Claude</b><br>
+        <span>Long writing, app planning, documents</span><br><br>
+        <span>Free + Paid • ⭐ 4.8</span>
+      </div>
+
+      <div class="card tool-item">
+        <b>Gemini</b><br>
+        <span>Google search, study, research</span><br><br>
+        <span>Free + Paid • ⭐ 4.7</span>
+      </div>
+
+      <div class="card tool-item">
+        <b>Canva AI</b><br>
+        <span>Poster, thumbnail, Instagram design</span><br><br>
+        <span>Free + Paid • ⭐ 4.8</span>
+      </div>
+
+      <div class="card tool-item">
+        <b>CapCut AI</b><br>
+        <span>Reels, shorts, video editing</span><br><br>
+        <span>Free • ⭐ 4.7</span>
+      </div>
+
+      <div class="card tool-item">
+        <b>Perplexity</b><br>
+        <span>Latest search, sources, research</span><br><br>
+        <span>Free + Paid • ⭐ 4.8</span>
+      </div>
+
+      <div class="card tool-item">
+        <b>Cursor</b><br>
+        <span>AI code editor for developers</span><br><br>
+        <span>Free + Paid • ⭐ 4.6</span>
+      </div>
+
+      <div class="card tool-item">
+        <b>NotebookLM</b><br>
+        <span>PDF summary, notes, study guide</span><br><br>
+        <span>Free • ⭐ 4.7</span>
+      </div>
+
+      <div class="card tool-item">
+        <b>Runway</b><br>
+        <span>AI video generation and editing</span><br><br>
+        <span>Free + Paid • ⭐ 4.6</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🇮🇳 India Focused Use Cases</h2>
+    <div class="grid">
+      <div class="card">Village User<br><span>Form filling, photo, video, local business</span></div>
+      <div class="card">Student<br><span>Notes, doubts, exam planning</span></div>
+      <div class="card">Creator<br><span>Reels, scripts, captions</span></div>
+      <div class="card">Businessman<br><span>Marketing, website, customer reply</span></div>
+      <div class="card">Freelancer<br><span>Services, proposal, portfolio</span></div>
+      <div class="card">Job Seeker<br><span>Resume, interview, skills</span></div>
+    </div>
+  </section>
+</main>
+
+<script>
+function searchTools(){
+  const input = document.getElementById("toolSearch").value.toLowerCase();
+  const tools = document.querySelectorAll(".tool-item");
+
+  tools.forEach(tool => {
+    const text = tool.innerText.toLowerCase();
+    tool.style.display = text.includes(input) ? "block" : "none";
+  });
+}
+</script>
+
+</body>
+</html>
