@@ -64,14 +64,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Card click details
   cards.forEach((card) => {
-    card.addEventListener("click", () => {
-      const title = card.innerText.split("\n")[0];
+  card.addEventListener("click", () => {
+    const title = card.innerText.toLowerCase();
 
-      alert(
-        "🚀 " + title + "\n\n" +
-        "Is category/tool ka detail page next update me add hoga.\n\n" +
-        "Yahan use case, best prompts, alternatives, jobs aur earning ideas dikhaye jayenge."
-      );
-    });
+    if (title.includes("study")) {
+      window.location.href = "study.html";
+    } else if (title.includes("coding")) {
+      window.location.href = "coding.html";
+    } else if (title.includes("content")) {
+      window.location.href = "content.html";
+    } else if (title.includes("career")) {
+      window.location.href = "career.html";
+    } else if (title.includes("earning")) {
+      window.location.href = "earning.html";
+    } else if (title.includes("daily")) {
+      window.location.href = "assistant.html";
+    }
   });
 });
