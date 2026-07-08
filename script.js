@@ -1,84 +1,80 @@
-// AIVerse India - Working Interactions
+// AIVerse India - Stable Professional Interactions
 
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.querySelector(".topbar input");
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInputs = document.querySelectorAll("input");
+  const cards = document.querySelectorAll(".card, .tool, .tool-item");
   const exploreBtn = document.querySelector(".hero-buttons button");
   const learnBtn = document.querySelector(".hero-buttons .secondary");
   const langBtn = document.querySelector(".topbar button:nth-of-type(1)");
   const themeBtn = document.querySelector(".topbar button:nth-of-type(2)");
 
-  const cards = document.querySelectorAll(".card, .tool");
-
-  // Explore button
+  // Smooth scroll button
   if (exploreBtn) {
-    exploreBtn.addEventListener("click", () => {
-      document.querySelector(".section").scrollIntoView({
-        behavior: "smooth"
-      });
+    exploreBtn.addEventListener("click", function () {
+      const firstSection = document.querySelector(".section");
+      if (firstSection) {
+        firstSection.scrollIntoView({ behavior: "smooth" });
+      }
     });
   }
 
-  // Start Learning button
+  // Secondary button
   if (learnBtn) {
-    learnBtn.addEventListener("click", () => {
-      alert("📚 Learning section coming soon!\n\nYahan AI learning roadmap, free courses aur study tools add honge.");
+    learnBtn.addEventListener("click", function () {
+      alert("📚 Ye feature next update me add hoga.");
     });
   }
 
-  // Hindi / English button
+  // Language button
   if (langBtn) {
-    langBtn.addEventListener("click", () => {
-      alert("🌐 Hindi / English switch coming soon!\n\nAbhi website Hinglish mode me hai.");
+    langBtn.addEventListener("click", function () {
+      alert("🌐 Hindi / English mode next update me add hoga.");
     });
   }
 
   // Theme button
   if (themeBtn) {
-    themeBtn.addEventListener("click", () => {
-      document.body.classList.toggle("light-mode");
-
-      if (document.body.classList.contains("light-mode")) {
-        themeBtn.textContent = "☀️";
-      } else {
-        themeBtn.textContent = "🌙";
-      }
+    themeBtn.addEventListener("click", function () {
+      document.body.classList.toggle("dark-mode");
+      themeBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
     });
   }
 
-  // Search working filter
-  if (searchInput) {
-    searchInput.addEventListener("input", () => {
-      const value = searchInput.value.toLowerCase().trim();
+  // Universal search for all pages
+  searchInputs.forEach(function (input) {
+    input.addEventListener("input", function () {
+      const value = input.value.toLowerCase().trim();
 
-      cards.forEach((card) => {
+      cards.forEach(function (card) {
         const text = card.innerText.toLowerCase();
 
-        if (text.includes(value)) {
-          card.style.display = "block";
+        if (value === "" || text.includes(value)) {
+          card.style.display = "";
         } else {
           card.style.display = "none";
         }
       });
     });
-  }
+  });
 
-  // Card click details
-  cards.forEach((card) => {
-  card.addEventListener("click", () => {
-    const title = card.innerText.toLowerCase();
+  // Reliable card navigation
+  cards.forEach(function (card) {
+    card.addEventListener("click", function () {
+      const text = card.innerText.toLowerCase();
 
-    if (title.includes("study")) {
-      window.location.href = "study.html";
-    } else if (title.includes("coding")) {
-      window.location.href = "coding.html";
-    } else if (title.includes("content")) {
-      window.location.href = "content.html";
-    } else if (title.includes("career")) {
-      window.location.href = "career.html";
-    } else if (title.includes("earning")) {
-      window.location.href = "earning.html";
-    } else if (title.includes("daily")) {
-      window.location.href = "assistant.html";
-    }
+      if (text.includes("study")) {
+        window.location.href = "study.html";
+      } else if (text.includes("coding")) {
+        window.location.href = "coding.html";
+      } else if (text.includes("content")) {
+        window.location.href = "content.html";
+      } else if (text.includes("career")) {
+        window.location.href = "career.html";
+      } else if (text.includes("earning")) {
+        window.location.href = "earning.html";
+      } else if (text.includes("daily")) {
+        window.location.href = "assistant.html";
+      }
+    });
   });
 });
